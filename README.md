@@ -7,17 +7,6 @@ The script is not complete yet, it may be very very buggy and blow up your compu
 Run this script first. It will do the following operations:
 
 - Set a New Computer Name
-- Remove a few pre-installed UWP applications
-  - Messaging
-  - CandyCrush
-  - Bing News
-  - Solitaire
-  - People
-  - Feedback Hub
-  - Your Phone
-  - My Office
-  - FitbitCoach
-  - Netflix
 - Remove "Microsoft Edge" desktop shortcut icon
 - Enable Developer Mode (for UWP Development)
 - Enable Remote Desktop
@@ -33,6 +22,19 @@ Run this script first. It will do the following operations:
 
 ## 02-Install-Software.cmd
 
-Run this to use choco to install common development tools:
+Run this to use choco to install development tools.
 
-// TODO
+## 03-RemovePreInstalledUwp.ps1
+
+Remove a few pre-installed UWP applications
+
+- Messaging
+- CandyCrush
+- Bing News
+- Solitaire
+- People
+- Feedback Hub
+- Your Phone
+- My Office
+- FitbitCoach
+- Netflix
