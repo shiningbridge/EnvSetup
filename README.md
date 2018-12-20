@@ -24,6 +24,29 @@ Run this script first. It will do the following operations:
 
 Run this to use choco to install development tools.
 
+- 7-Zip
+- Google Chrome
+- Pot Player
+- Microsoft Teams
+- SysInternals
+- FileZilla
+- TeamViewer
+- Notepad++
+- Visual Studio Code
+  - C-Sharp
+  - Icons
+  - MSSQL
+- DotPeek
+- LINQPad
+- Fiddler
+- Git
+- GitHub for Windows
+- FFMpeg
+- CURL
+- WGet
+- Beyond Compare
+- Node.js
+
 ## 03-RemovePreInstalledUwp.ps1
 
 Remove a few pre-installed UWP applications
