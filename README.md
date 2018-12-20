@@ -1,4 +1,32 @@
 # Edi Windows 10 Developer Environment Setup
-Choco script for setting up my dev box.
 
 The script is not complete yet, it may be very very buggy and blow up your computer sky high.
+
+## 01-Prepare-Windows.ps1
+
+Run this script first. It will do the following operations:
+
+- Set a New Computer Name
+- Remove a few pre-installed UWP that does not have a dick use
+  - Messaging
+  - CandyCrush
+  - Bing News
+  - Solitaire
+  - People
+  - Feedback Hub
+  - Your Phone
+- Install IIS
+  - ASP.NET 4.7
+  - Dynamic and Static Compression
+  - Basic Authentication
+  - Windows Authentication
+  - Server Side Includes
+  - WebSockets
+- Install Chocolate for Windows
+- Restart Windows
+
+## 02-Install-Software.cmd
+
+Run this to use choco to install common development tools:
+
+// TODO
