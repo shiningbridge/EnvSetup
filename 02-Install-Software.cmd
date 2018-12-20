@@ -12,6 +12,8 @@
 @echo Installing 7-Zip...
 @echo ------------------------------------
 choco install 7zip.install -y
+choco install googlechrome -y
+choco install potplayer -y
 
 @echo.
 @echo ------------------------------------
@@ -39,6 +41,19 @@ choco install notepadplusplus.install -y
 choco install vscode -y
 choco install vscode-csharp -y
 choco install vscode-icons -y
+choco install vscode-mssql -y
+
+@echo.
+@echo ------------------------------------
+@echo Installing DotPeek...
+@echo ------------------------------------
+choco install dotpeek -y
+
+@echo.
+@echo ------------------------------------
+@echo Installing LINQPad...
+@echo ------------------------------------
+choco install linqpad
 
 @echo.
 @echo ------------------------------------

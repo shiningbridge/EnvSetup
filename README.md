@@ -7,7 +7,7 @@ The script is not complete yet, it may be very very buggy and blow up your compu
 Run this script first. It will do the following operations:
 
 - Set a New Computer Name
-- Remove a few pre-installed UWP that does not have a dick use
+- Remove a few pre-installed UWP applications
   - Messaging
   - CandyCrush
   - Bing News
@@ -15,6 +15,12 @@ Run this script first. It will do the following operations:
   - People
   - Feedback Hub
   - Your Phone
+  - My Office
+  - FitbitCoach
+  - Netflix
+- Remove "Microsoft Edge" desktop shortcut icon
+- Enable Developer Mode (for UWP Development)
+- Enable Remote Desktop
 - Install IIS
   - ASP.NET 4.7
   - Dynamic and Static Compression
