@@ -1,10 +1,12 @@
 @echo off
-@echo *======================================================================
+@echo *=====================================================================================
 @echo  Choco Auto Installer
 @echo.
-@echo  This script is for installing new dev machines for Edi Wang.
+@echo  This script is for setup new dev machine for Edi Wang.
 @echo  Feel free to modify it to fit your own requirements. 
-@echo *======================================================================
+@echo *=====================================================================================
+@echo.
+@echo [WARNING] Ma de in China: some software like Google Chrome require the true Internet first
 @echo.
 @echo 1/3 Installing normal people software...
 @echo.
@@ -12,7 +14,17 @@
 @echo Installing 7-Zip...
 @echo ------------------------------------
 choco install 7zip.install -y
+
+@echo.
+@echo ------------------------------------
+@echo Installing Google Chrome...
+@echo ------------------------------------
 choco install googlechrome -y
+
+@echo.
+@echo ------------------------------------
+@echo Installing PotPlayer...
+@echo ------------------------------------
 choco install potplayer -y
 
 @echo.
@@ -20,6 +32,12 @@ choco install potplayer -y
 @echo Installing Microsoft Teams...
 @echo ------------------------------------
 choco install microsoft-teams.install -y
+
+@echo.
+@echo ------------------------------------
+@echo Installing Lightshot...
+@echo ------------------------------------
+choco install lightshot.install -y
 
 @echo.
 @echo 2/3 Installing IT pro software...
@@ -53,7 +71,7 @@ choco install dotpeek -y
 @echo ------------------------------------
 @echo Installing LINQPad...
 @echo ------------------------------------
-choco install linqpad
+choco install linqpad -y
 
 @echo.
 @echo ------------------------------------
@@ -88,12 +106,18 @@ choco install wget -y
 
 @echo.
 @echo ------------------------------------
+@echo Installing OpenSSL...
+@echo ------------------------------------
+choco install openssl.light -y
+
+@echo.
+@echo ------------------------------------
 @echo Installing Beyond Compare...
 @echo ------------------------------------
 choco install beyondcompare -y
 
-@echo.
-@echo ------------------------------------
-@echo Installing Node.js...
-@echo ------------------------------------
-choco install nodejs -y
+REM @echo.
+REM @echo ------------------------------------
+REM @echo Installing Node.js...
+REM @echo ------------------------------------
+REM choco install nodejs -y

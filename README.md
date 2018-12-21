@@ -7,6 +7,8 @@ The script is not complete yet, it may be very very buggy and blow up your compu
 Run this script first. It will do the following operations:
 
 - Set a New Computer Name
+- Disable Sleep on AC Power
+- Add 'This PC' Desktop Icon (need refresh desktop)
 - Remove "Microsoft Edge" desktop shortcut icon
 - Enable Developer Mode (for UWP Development)
 - Enable Remote Desktop
@@ -29,6 +31,7 @@ Run this to use choco to install development tools.
 - Pot Player
 - Microsoft Teams
 - SysInternals
+- Lightshot
 - FileZilla
 - TeamViewer
 - Notepad++
@@ -44,8 +47,9 @@ Run this to use choco to install development tools.
 - FFMpeg
 - CURL
 - WGet
+- OpenSSL
 - Beyond Compare
-- Node.js
+// - Node.js
 
 ## 03-RemovePreInstalledUwp.ps1
 
