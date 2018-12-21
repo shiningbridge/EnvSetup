@@ -1,10 +1,23 @@
-# Edi Windows 10 Developer Environment Setup
+# Windows 10 Developer Machine Setup
 
-The script is not complete yet, it may be very very buggy and blow up your computer sky high.
+This is the script for Edi Wang to setup a new dev box. You can modify the scripts to fit your own requirements.
 
-## 01-Prepare-Windows.ps1
+## Prerequisites
 
-Run this script first. It will do the following operations:
+- A clean install of Windows 10 Pro v1809 en-us.
+- If you are in China: a stable "Internet" connection.
+
+*This script has not been tested on other version of Windows, please be careful if you are using it on other Windows versions.*
+
+## How to Use
+
+Run the following scripts in order.
+
+### (Optional)
+
+Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context menu on the powershell files to run as Administrator.
+
+### 01-Prepare-Windows.ps1
 
 - Set a New Computer Name
 - Disable Sleep on AC Power
@@ -22,9 +35,9 @@ Run this script first. It will do the following operations:
 - Install Chocolate for Windows
 - Restart Windows
 
-## 02-Install-Software.cmd
+### 02-Install-Software.cmd
 
-Run this to use choco to install development tools.
+Use choco to install development tools.
 
 - 7-Zip
 - Google Chrome
@@ -49,9 +62,10 @@ Run this to use choco to install development tools.
 - WGet
 - OpenSSL
 - Beyond Compare
-// - Node.js
 
-## 03-RemovePreInstalledUwp.ps1
+*To find more software, like Node.js, Firefox, etc. Go to https://chocolatey.org/packages*
+
+### 03-RemovePreInstalledUwp.ps1
 
 Remove a few pre-installed UWP applications
 
