@@ -6,25 +6,39 @@
 @echo  Feel free to modify it to fit your own requirements. 
 @echo *=====================================================================================
 @echo.
-@echo [WARNING] Ma de in China: some software like Google Chrome require the true Internet first
+@echo **Ma de in China: some software like Google Chrome require the true Internet first**
 @echo.
-@echo 1/3 Installing normal people software...
-@echo.
-@echo ------------------------------------
-@echo Installing 7-Zip...
-@echo ------------------------------------
+
+:start
+ECHO What kind of person are you?
+ECHO ----------------------------
+ECHO 1. Normal People
+ECHO 2. Programmer
+ECHO ----------------------------
+set choice=
+set /p choice=Enter the choice number:
+if not '%choice%'=='' set choice=%choice:~0,1%
+if '%choice%'=='1' goto normalpeople
+if '%choice%'=='2' goto programmer
+ECHO "%choice%" is not valid, try again
+ECHO.
+goto start
+
+:normalpeople
+@echo ---------------------------------------------
+@echo Installing 7-Zip, Google Chrome, PotPlayer...
+@echo ---------------------------------------------
 choco install 7zip.install -y
-
-@echo.
-@echo ------------------------------------
-@echo Installing Google Chrome...
-@echo ------------------------------------
 choco install googlechrome -y
+choco install potplayer -y
+goto end
 
-@echo.
-@echo ------------------------------------
-@echo Installing PotPlayer...
-@echo ------------------------------------
+:programmer
+@echo ---------------------------------------------
+@echo Installing 7-Zip, Google Chrome, PotPlayer...
+@echo ---------------------------------------------
+choco install 7zip.install -y
+choco install googlechrome -y
 choco install potplayer -y
 
 @echo.
@@ -40,13 +54,23 @@ choco install microsoft-teams.install -y
 choco install lightshot.install -y
 
 @echo.
-@echo 2/3 Installing IT pro software...
+@echo ------------------------------------
+@echo Installing SysInternals...
+@echo ------------------------------------
 choco install sysinternals -y
+
+@echo.
+@echo ------------------------------------
+@echo Installing FileZilla...
+@echo ------------------------------------
 choco install filezilla -y
+
+@echo.
+@echo ------------------------------------
+@echo Installing TeamViewer...
+@echo ------------------------------------
 choco install teamviewer -y
 
-@echo 3/3 Installing developer software...
-@echo.
 @echo ------------------------------------
 @echo Installing NotePad++...
 @echo ------------------------------------
@@ -87,27 +111,12 @@ choco install git -y
 choco install github-desktop -y
 
 @echo.
-@echo ------------------------------------
-@echo Installing FFMpeg...
-@echo ------------------------------------
+@echo ---------------------------------------------
+@echo Installing FFMpeg, CURL, WGet, OpenSSL...
+@echo ---------------------------------------------
 choco install ffmpeg -y
-
-@echo.
-@echo ------------------------------------
-@echo Installing CURL...
-@echo ------------------------------------
 choco install curl -y
-
-@echo.
-@echo ------------------------------------
-@echo Installing wget...
-@echo ------------------------------------
 choco install wget -y
-
-@echo.
-@echo ------------------------------------
-@echo Installing OpenSSL...
-@echo ------------------------------------
 choco install openssl.light -y
 
 @echo.
@@ -121,3 +130,9 @@ REM @echo ------------------------------------
 REM @echo Installing Node.js...
 REM @echo ------------------------------------
 REM choco install nodejs -y
+goto end
+
+:end
+ECHO ---------------------------------------------
+ECHO Install finished, press any key to exit.
+pause
