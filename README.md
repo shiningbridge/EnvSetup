@@ -52,6 +52,7 @@ Use choco to install development tools.
   - C-Sharp
   - Icons
   - MSSQL
+  - PowerShell
 - DotPeek
 - LINQPad
 - Fiddler
@@ -62,6 +63,7 @@ Use choco to install development tools.
 - WGet
 - OpenSSL
 - Beyond Compare
+- Node.Js
 
 *To find more software, like Node.js, Firefox, etc. Go to https://chocolatey.org/packages*
 

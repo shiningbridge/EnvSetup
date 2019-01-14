@@ -84,6 +84,7 @@ choco install vscode -y
 choco install vscode-csharp -y
 choco install vscode-icons -y
 choco install vscode-mssql -y
+choco install vscode-powershell -y
 
 @echo.
 @echo ------------------------------------
@@ -125,11 +126,11 @@ choco install openssl.light -y
 @echo ------------------------------------
 choco install beyondcompare -y
 
-REM @echo.
-REM @echo ------------------------------------
-REM @echo Installing Node.js...
-REM @echo ------------------------------------
-REM choco install nodejs -y
+@echo.
+@echo ------------------------------------
+@echo Installing Node.js...
+@echo ------------------------------------
+choco install nodejs -y
 goto end
 
 :end
