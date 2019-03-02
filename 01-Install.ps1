@@ -59,5 +59,37 @@ Write-Host "Installing Chocolate for Windows..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 # -----------------------------------------------------------------------------
-Read-Host -Prompt "Configuration is done, restart is needed, press [ENTER] to restart computer."
+Write-Host ""
+Write-Host "Installing Applications..." -ForegroundColor Green
+Write-Host "------------------------------------" -ForegroundColor Green
+Write-Host "[WARN] Ma de in China: some software like Google Chrome require the true Internet first" -ForegroundColor Yellow
+
+choco install 7zip.install -y
+choco install googlechrome -y
+choco install potplayer -y
+choco install git -y
+choco install ffmpeg -y
+choco install curl -y
+choco install wget -y
+choco install openssl.light -y
+choco install vscode -y
+choco install vscode-csharp -y
+choco install vscode-icons -y
+choco install vscode-mssql -y
+choco install vscode-powershell -y
+choco install sysinternals -y
+choco install notepadplusplus.install -y
+choco install dotpeek -y
+choco install linqpad -y
+choco install fiddler -y
+choco install nodejs -y
+choco install beyondcompare -y
+choco install filezilla -y
+choco install lightshot.install -y
+choco install microsoft-teams.install -y
+choco install teamviewer -y
+choco install github-desktop -y
+
+Write-Host "------------------------------------" -ForegroundColor Green
+Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."
 Restart-Computer
