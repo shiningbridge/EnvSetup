@@ -68,6 +68,7 @@ choco install 7zip.install -y
 choco install googlechrome -y
 choco install potplayer -y
 choco install git -y
+choco install dotnetcore-sdk -y
 choco install ffmpeg -y
 choco install curl -y
 choco install wget -y
