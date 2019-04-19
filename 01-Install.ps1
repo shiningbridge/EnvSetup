@@ -20,7 +20,7 @@ if ($item) {
     Set-ItemProperty  -Path $thisPCIconRegPath -name $thisPCRegValname -Value 0  
 } 
 else { 
-    New-ItemProperty -Path $thisPCIconRegPath -Name $thisPCRegValname -Value 0 -PropertyType DWORD  | Out-Null  
+    New-ItemProperty -Path $thisPCIconRegPath -Name $thisPCRegValname -Value 0 -PropertyType DWORD | Out-Null  
 } 
 # -----------------------------------------------------------------------------
 Write-Host ""
@@ -53,12 +53,17 @@ Write-Host "------------------------------------" -ForegroundColor Green
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\" -Name "fDenyTSConnections" -Value 0
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\" -Name "UserAuthentication" -Value 1
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
-# -----------------------------------------------------------------------------
-Write-Host ""
-Write-Host "Installing Chocolate for Windows..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-# -----------------------------------------------------------------------------
+
+$testchoco = powershell choco -v
+if (-not($testchoco)) {
+    # -----------------------------------------------------------------------------
+    Write-Host ""
+    Write-Host "Installing Chocolate for Windows..." -ForegroundColor Green
+    Write-Host "------------------------------------" -ForegroundColor Green
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    # -----------------------------------------------------------------------------
+}
+
 Write-Host ""
 Write-Host "Installing Applications..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
