@@ -112,7 +112,6 @@ choco install notepadplusplus.install -y
 choco install dotpeek -y
 choco install linqpad -y
 choco install fiddler -y
-choco install nodejs -y
 choco install beyondcompare -y
 choco install filezilla -y
 choco install lightshot.install -y
