@@ -1,4 +1,9 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
+
+function Check-Command($cmdname) {
+    return [bool](Get-Command -Name $cmdname -ErrorAction SilentlyContinue)
+}
+
 # -----------------------------------------------------------------------------
 $computerName = Read-Host 'Enter New Computer Name'
 Write-Host "Renaming this computer to: " $computerName  -ForegroundColor Yellow
@@ -54,14 +59,14 @@ Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\" -Name
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\" -Name "UserAuthentication" -Value 1
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
-$testchoco = powershell choco -v
-if (-not($testchoco)) {
-    # -----------------------------------------------------------------------------
+if (Check-Command -cmdname 'choco') {
+    Write-Host "Choco is already installed, skip installation."
+}
+else {
     Write-Host ""
     Write-Host "Installing Chocolate for Windows..." -ForegroundColor Green
     Write-Host "------------------------------------" -ForegroundColor Green
     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    # -----------------------------------------------------------------------------
 }
 
 Write-Host ""
@@ -69,10 +74,29 @@ Write-Host "Installing Applications..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Write-Host "[WARN] Ma de in China: some software like Google Chrome require the true Internet first" -ForegroundColor Yellow
 
+if (Check-Command -cmdname 'git') {
+    Write-Host "Git is already installed, checking new version..."
+    choco update git -y
+}
+else {
+    Write-Host ""
+    Write-Host "Installing Git for Windows..." -ForegroundColor Green
+    choco install git -y
+}
+
+if (Check-Command -cmdname 'node') {
+    Write-Host "Node.js is already installed, checking new version..."
+    choco update nodejs -y
+}
+else {
+    Write-Host ""
+    Write-Host "Installing Node.js..." -ForegroundColor Green
+    choco install nodejs -y
+}
+
 choco install 7zip.install -y
 choco install googlechrome -y
 choco install potplayer -y
-choco install git -y
 choco install dotnetcore-sdk -y
 choco install ffmpeg -y
 choco install curl -y
