@@ -11,6 +11,8 @@ This is the script for Edi Wang to setup a new dev box. You can modify the scrip
 
 ## How to Use
 
+Download latest script here: https://go.edi.wang/aka/envsetup
+
 ### Optional
 
 Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context menu on the powershell files to run as Administrator.
