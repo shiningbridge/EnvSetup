@@ -119,7 +119,6 @@ choco install googlechrome -y
 choco install potplayer -y
 choco install dotnetcore-sdk -y
 choco install ffmpeg -y
-choco install curl -y
 choco install wget -y
 choco install openssl.light -y
 choco install vscode -y
