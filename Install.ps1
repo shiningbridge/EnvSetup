@@ -137,6 +137,7 @@ choco install lightshot.install -y
 choco install microsoft-teams.install -y
 choco install teamviewer -y
 choco install github-desktop -y
+choco install irfanview -y
 
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
 
