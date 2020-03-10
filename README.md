@@ -58,6 +58,9 @@ Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context men
     - OpenSSL
     - Beyond Compare
     - Node.Js
+    - Azure CLI
+    - IrfanView
+    - PowerShell 7
 - Remove a few pre-installed UWP applications
     - Messaging
     - CandyCrush
