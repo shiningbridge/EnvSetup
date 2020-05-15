@@ -4,7 +4,7 @@ This is the script for Edi Wang to setup a new dev box. You can modify the scrip
 
 ## Prerequisites
 
-- A clean install of Windows 10 Pro v1903 en-us.
+- A clean install of Windows 10 Pro v2004 en-us.
 - If you are in China: a stable "Internet" connection.
 
 > This script has not been tested on other version of Windows, please be careful if you are using it on other Windows versions.
@@ -34,8 +34,9 @@ Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context men
   - WebSockets
 - Install Chocolate for Windows
     - 7-Zip
+    - Microsoft Edge (Chromium)
     - Google Chrome
-    - Pot Player
+    - VLC
     - Microsoft Teams
     - SysInternals
     - Lightshot
@@ -43,10 +44,6 @@ Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context men
     - TeamViewer
     - Notepad++
     - Visual Studio Code
-        - C-Sharp
-        - Icons
-        - MSSQL
-        - PowerShell
     - DotPeek
     - LINQPad
     - Fiddler

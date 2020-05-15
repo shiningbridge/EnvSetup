@@ -116,20 +116,16 @@ else {
 }
 
 choco install 7zip.install -y
+choco install microsoft-edge -y
 choco install googlechrome -y
-choco install potplayer -y
+choco install vlc -y
 choco install dotnetcore-sdk -y
 choco install ffmpeg -y
 choco install wget -y
 choco install openssl.light -y
 choco install vscode -y
-choco install vscode-csharp -y
-choco install vscode-icons -y
-choco install vscode-mssql -y
-choco install vscode-powershell -y
 choco install sysinternals -y
 choco install notepadplusplus.install -y
-choco install dotpeek -y
 choco install linqpad -y
 choco install fiddler -y
 choco install beyondcompare -y
@@ -142,7 +138,7 @@ choco install irfanview -y
 
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
 
-Invoke-WebRequest -Uri https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/PowerShell-7.0.0-win-x64.msi -OutFile .\PS7.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I PS7.msi /quiet'
+Invoke-WebRequest -Uri https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/PowerShell-7.0.1-win-x64.msi -OutFile .\PS7.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I PS7.msi /quiet'
 
 Write-Host "------------------------------------" -ForegroundColor Green
 Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."
