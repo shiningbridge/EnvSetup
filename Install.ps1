@@ -1,9 +1,5 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
-function Check-Command($cmdname) {
-    return [bool](Get-Command -Name $cmdname -ErrorAction SilentlyContinue)
-}
-
 # -----------------------------------------------------------------------------
 $computerName = Read-Host 'Enter New Computer Name'
 Write-Host "Renaming this computer to: " $computerName  -ForegroundColor Yellow
@@ -27,13 +23,7 @@ if ($item) {
 else { 
     New-ItemProperty -Path $thisPCIconRegPath -Name $thisPCRegValname -Value 0 -PropertyType DWORD | Out-Null  
 } 
-# -----------------------------------------------------------------------------
-Write-Host ""
-Write-Host "Removing Edge Desktop Icon..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-$edgeLink = $env:USERPROFILE + "\Desktop\Microsoft Edge.lnk"
-Remove-Item $edgeLink
-# -----------------------------------------------------------------------------
+
 # To list all appx packages:
 # Get-AppxPackage | Format-Table -Property Name,Version,PackageFullName
 Write-Host "Removing UWP Rubbish..." -ForegroundColor Green
@@ -95,50 +85,35 @@ Write-Host "Installing Applications..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Write-Host "[WARN] Ma de in China: some software like Google Chrome require the true Internet first" -ForegroundColor Yellow
 
-if (Check-Command -cmdname 'git') {
-    Write-Host "Git is already installed, checking new version..."
-    choco update git -y
-}
-else {
-    Write-Host ""
-    Write-Host "Installing Git for Windows..." -ForegroundColor Green
-    choco install git -y
-}
+$Apps = @(
+    "7zip.install",
+    "git",
+    "microsoft-edge",
+    "googlechrome",
+    "vlc",
+    "dotnetcore-sdk",
+    "ffmpeg",
+    "wget",
+    "openssl.light",
+    "vscode",
+    "sysinternals",
+    "notepadplusplus.install",
+    "linqpad",
+    "fiddler",
+    "beyondcompare",
+    "filezilla",
+    "lightshot.install",
+    "microsoft-teams.install",
+    "teamviewer",
+    "github-desktop",
+    "irfanview",
+    "nodejs-lts",
+    "azure-cli",
+    "powershell-core")
 
-if (Check-Command -cmdname 'node') {
-    Write-Host "Node.js is already installed, checking new version..."
-    choco update nodejs -y
+foreach ($app in $Apps) {
+    choco install $app -y
 }
-else {
-    Write-Host ""
-    Write-Host "Installing Node.js..." -ForegroundColor Green
-    choco install nodejs -y
-}
-
-choco install 7zip.install -y
-choco install microsoft-edge -y
-choco install googlechrome -y
-choco install vlc -y
-choco install dotnetcore-sdk -y
-choco install ffmpeg -y
-choco install wget -y
-choco install openssl.light -y
-choco install vscode -y
-choco install sysinternals -y
-choco install notepadplusplus.install -y
-choco install linqpad -y
-choco install fiddler -y
-choco install beyondcompare -y
-choco install filezilla -y
-choco install lightshot.install -y
-choco install microsoft-teams.install -y
-choco install teamviewer -y
-choco install github-desktop -y
-choco install irfanview -y
-
-Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
-
-Invoke-WebRequest -Uri https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/PowerShell-7.0.1-win-x64.msi -OutFile .\PS7.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I PS7.msi /quiet'
 
 Write-Host "------------------------------------" -ForegroundColor Green
 Read-Host -Prompt "Setup is done, restart is needed, press [ENTER] to restart computer."

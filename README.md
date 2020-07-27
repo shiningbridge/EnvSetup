@@ -11,19 +11,18 @@ This is the script for Edi Wang to setup a new dev box. You can modify the scrip
 
 ## How to Use
 
-Download latest script here: https://go.edi.wang/aka/envsetup
+Download latest script here: https://raw.githubusercontent.com/EdiWang/EnvSetup/master/Install.ps1
 
 ### Optional
 
 Import "Add_PS1_Run_as_administrator.reg" to your registry to enable context menu on the powershell files to run as Administrator.
 
-### Run Install.ps1 as Administrator
+### Run Install.ps1
 
 - Set a New Computer Name
 - Disable Sleep on AC Power
 - Add 'This PC' Desktop Icon (need refresh desktop)
-- Remove "Microsoft Edge" desktop shortcut icon
-- Enable Developer Mode (for UWP Development)
+- Enable Developer Mode
 - Enable Remote Desktop
 - Install IIS
   - ASP.NET 4.8
